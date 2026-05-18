@@ -15,7 +15,7 @@ import { SERVICE_CATEGORIES, AVAILABILITY_OPTIONS, PAKISTAN_CITIES } from '@/typ
 type Mode = 'login' | 'register';
 type Role = 'customer' | 'provider';
 
-export default function AuthPage() {
+function AuthContent() {
   const [mode, setMode] = useState<Mode>('login');
   const [role, setRole] = useState<Role>('customer');
   const [loading, setLoading] = useState(false);
@@ -330,5 +330,17 @@ export default function AuthPage() {
         </motion.div>
       </div>
     </div>
+  );
+}
+
+export default function AuthPage() {
+  return (
+    <React.Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-surface-50 dark:bg-surface-950">
+        <Loader2 className="w-7 h-7 animate-spin text-brand-500" />
+      </div>
+    }>
+      <AuthContent />
+    </React.Suspense>
   );
 }
