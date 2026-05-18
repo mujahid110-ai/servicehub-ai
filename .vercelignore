@@ -1,0 +1,33 @@
+# Vercel deployment ignore file
+
+# Dependencies (Vercel installs these itself)
+node_modules
+
+# Dev/test files
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+__tests__
+coverage
+.jest*
+
+# Misc
+.DS_Store
+*.pem
+Thumbs.db
+README.md
+.env.local.example
+
+# Editor configs
+.vscode
+.idea
+*.swp
+*.swo
+
+# Git
+.git
+.github
+
+# Local scripts
+scripts/
